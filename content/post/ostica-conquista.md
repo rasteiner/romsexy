@@ -1,6 +1,5 @@
 +++
 date = "2016-03-03T19:41:56+01:00"
-draft = false
 title = "L'ostica conquista del sito vecchio"
 
 +++
