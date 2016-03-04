@@ -1,7 +1,7 @@
 box: debian
 build:
   steps:
-    - arjen/hugo-build:
+    - rasteiner/hugo-build:
         version: "0.15"
         prod_branches: master
 deploy:
