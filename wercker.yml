@@ -6,6 +6,8 @@ build:
         prod_branches: master
 deploy:
   steps:
+    - install-packages:
+        packages: openssh-client
     - add-to-known_hosts:
         hostname: rom.sexy
     - mktemp:
