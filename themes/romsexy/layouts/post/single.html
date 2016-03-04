@@ -1,0 +1,13 @@
+{{ partial "header" . }}
+
+<h1><a href="/">{{ .Site.Title }}</a></h1>
+
+<article class="single">
+	{{ partial "postheader" . }}
+	
+	<div class="content">
+		{{ .Content }}
+	</div>
+</article>
+
+{{ partial "footer" . }}

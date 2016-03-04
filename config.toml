@@ -1,0 +1,9 @@
+baseurl = "https://rom.sexy/"
+languageCode = "it-CH"
+title = "Cdrrr"
+builddrafts = true
+theme = "romsexy"
+PygmentsCodeFences = true
+
+[params]
+	Subtitle = "Programmatore di <span class='nw'>Omicron Perseo 8</span>"
