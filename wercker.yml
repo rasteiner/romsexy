@@ -21,6 +21,7 @@ deploy:
     - script:
         name: transfer application
         code: |
+          cd $WERCKER_OUTPUT_DIR
           pwd
           ls -la
           scp -r -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no public/* $DEPLOY_PATH
