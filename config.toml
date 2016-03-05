@@ -4,6 +4,7 @@ title = "Cdrrr"
 builddrafts = true
 theme = "romsexy"
 PygmentsCodeFences = true
+googleAnalytics = "UA-74722243-1"
 
 [params]
 	Subtitle = "Programmatore di <span class='nw'>Omicron Perseo 8</span>"
