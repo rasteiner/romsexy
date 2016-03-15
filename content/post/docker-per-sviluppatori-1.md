@@ -66,7 +66,7 @@ In `~/.bashrc` quindi ho aggiunto un alias del genere:
 alias apache='docker run -p 80:80 -v "$PWD:/var/www/html" rasteiner/phpapache-for-devs'
 ```
 
-Così posso giocare con qualsiasi sito `solo PHP` in questo modo:
+Così posso giocare con qualsiasi sito "solo PHP" in questo modo:
 
 ```console
 $ cd ~/applicazioneMia

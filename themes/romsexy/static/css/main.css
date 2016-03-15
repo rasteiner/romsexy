@@ -99,3 +99,10 @@ article.summary {
 	max-width: 100%;
 	overflow-x: auto;
 }
+
+code {
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #E6E6E6;
+    background-color: #F3F3F3;
+}
