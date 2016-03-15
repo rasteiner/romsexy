@@ -48,10 +48,10 @@ $ docker run -v "$PWD:/var/www/html" -p 80:80 rasteiner/common-php-apache
 
 `$PWD` ovviamente viene sostituito da bash con la path della cartella attuale. 
 
-Tutto bello! Funziona benissimo! A meno che l'applicazione non prevede di scrivere nella cartella "shareata". Ovviamente `ẁww-data` (l'utente di Apache all'interno del container) non ha nessun diritto di scrittura sulla **mia** cartella. Potrei risolvere dando a chiunque permessi di scrittura (`chmod -R 777 .`) e sappiamo tutti quanto questo sia una *buona idea*, almeno finché non veniamo presi a sassate dal sysadmin di turno.
+Tutto bello! Funziona benissimo! A meno che l'applicazione non prevede di scrivere nella cartella "shareata". Ovviamente `www-data` (l'utente di Apache all'interno del container) non ha nessun diritto di scrittura sulla **mia** cartella. Potrei risolvere dando a chiunque permessi di scrittura (`chmod -R 777 .`) e sappiamo tutti quanto questo sia una *buona idea*, almeno finché non veniamo presi a sassate dal sysadmin di turno.
 
-La soluzione al problema dei permessi sembra essere quello di dare a `ẁww-data` lo stesso UID del nostro utente. In questo modo, se ho capito bene, fondamentalmente il kernel non capisce mica che `www-data` è qualcun'altro (e quindi è un po' come se Apache venisse eseguito con gli stessi diritti sui file come ce li ho io). Su macchine Linux, l'utente principale (cioè l'utente creato durante l'installazione di Linux) spesso ha UID 1000. 
-Se nel nostro Dockerfile dello stack PHP Apache quindi inseriamo l'istruzione di settare l'uid di `ẁww-data` a `1000`, questo problema si risolve. Io mi son fatto un'[immagine apposta](https://hub.docker.com/r/rasteiner/phpapache-for-devs/):
+La soluzione al problema dei permessi sembra essere quello di dare a `www-data` lo stesso UID del nostro utente. In questo modo, se ho capito bene, fondamentalmente il kernel non capisce mica che `www-data` è qualcun'altro (e quindi è un po' come se Apache venisse eseguito con gli stessi diritti sui file come ce li ho io). Su macchine Linux, l'utente principale (cioè l'utente creato durante l'installazione di Linux) spesso ha UID 1000. 
+Se nel nostro Dockerfile dello stack PHP Apache quindi inseriamo l'istruzione di settare l'uid di `www-data` a `1000`, questo problema si risolve. Io mi son fatto un'[immagine apposta](https://hub.docker.com/r/rasteiner/phpapache-for-devs/):
 
 
 ```
